@@ -1,11 +1,9 @@
-import numpy as np
 import pandas as pd
-from matplotlib import pyplot as plt
+from matplotlib.pyplot import pyplot as plt
 
 pd.set_option("display.precision", 2)
 
-data = pd.read_csv('titanic_train.csv',
-                  index_col='PassengerId')
+data = pd.read_csv('titanic_train.csv', index_col='PassengerId')
 
 data.head(5)
 
@@ -28,8 +26,8 @@ def age_category(age):
     elif age >= 55:
         return 3
 
-    age_categories = [age_category(age) for age in data.Age]
-data['Age_category'] = age_categories
+    age_categories = [age_category(age) for age in data.Age] 
+    data['Age_category'] = age_categories
 
 #1 Сколько мудчин и женщин было на боррту?
 male_count = data[data['Sex'] == 'male'].shape[0]
@@ -106,4 +104,3 @@ if (avg_age_by_class_and_sex.loc[1].mean() > avg_age_by_class_and_sex.loc[2].mea
 print("8. Как средний возраст мужчин / женщин зависит от Pclass?")
 for statement in statements:
     print(statement) 
-
