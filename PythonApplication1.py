@@ -1,11 +1,9 @@
-﻿import numpy as np
 import pandas as pd
-from matplotlib import pyplot as plt
+from matplotlib.pyplot import pyplot as plt
 
 pd.set_option("display.precision", 2)
 
-data = pd.read_csv('titanic_train.csv',
-                  index_col='PassengerId')
+data = pd.read_csv('titanic_train.csv', index_col='PassengerId')
 
 data.head(5)
 
